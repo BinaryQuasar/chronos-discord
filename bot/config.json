@@ -1,0 +1,14 @@
+{
+    "webhook": {
+        "id": "429015163903934494",
+        "token": "-adbUwaANUBBL-tpFv3FT1J8ghRrvVZ9wXCri23V2OoW2Gk4aGMz9F18BDc-I-ZNG0wD"
+    },
+    "web3EventsProvider": "wss://rinkeby.infura.io/ws",
+    "contracts": [
+        {
+            "address": "0x3539b4408974F38d9C81D456F588FfFD8a0a3706",
+            "name": "Chronos",
+            "url": "https://chronos.quazr.io/"
+        }
+    ]
+}
