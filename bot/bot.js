@@ -9,7 +9,7 @@ const chronosCoreAbi = require('./abi/ChronosCore');
 const hook = new Discord.WebhookClient(config.webhook.id, config.webhook.token);
 
 // Debug code, print instead of send:
-hook.send = (msg) => console.log('-> ' + msg);
+// hook.send = (msg) => console.log('-> ' + msg);
 
 // Connect to an Ethereum provider
 const web3jsEvents = new Web3(new Web3.providers.WebsocketProvider(config.web3EventsProvider));
@@ -67,17 +67,17 @@ for (let i = 0; i < config.contracts.length; i++) {
             const pool = weiToEther(values.newPrizePool);
             
             if (wagerIndex == 0) {
-                hook.send("@watcher A new " + contract.name + " game just started! Prize pool: " + Number(pool).toFixed(4) + " Ether. Visit " + contract.url + " to play.");
-            } else if (wagerIndex == 9) {
-                hook.send(contract.name + " reached 10 wagers! Prize pool: " + Number(pool).toFixed(4) + " Ether. Visit " + contract.url + " to play.");
+                hook.send("<@" + config.role + "> A new " + contract.name + " game just started! :clock10: Prize pool: " + Number(pool).toFixed(4) + " Ether. Visit <" + contract.url + "> to play.");
+            //} else if (wagerIndex == 9) {
+            //    hook.send(contract.name + " reached 10 wagers! Prize pool: " + Number(pool).toFixed(4) + " Ether.");
             } else if (wagerIndex > 9 && wagerIndex % 25 == 24) {
-                hook.send(contract.name + " reached " + (wagerIndex + 1) + " wagers! Prize pool: " + Number(pool).toFixed(4) + " Ether. Visit " + contract.url + " to play.");
+                hook.send(contract.name + " reached " + (wagerIndex + 1) + " wagers! Prize pool: " + Number(pool).toFixed(4) + " Ether. :moneybays:");
             }
         } else if (event.event == 'End') {
             const winner = values.winner;
             const pool = weiToEther(values.prize);
             
-            hook.send("A game of " + contract.name + " was won by " + winner.substr(0,12) + "! Prize pool: " + Number(pool).toFixed(4) + " Ether.");
+            hook.send(":confetti_ball: `" + winner.substr(0,12) + "` won " + Number(pool).toFixed(4) + " Ether in the last round of " + contract.name + "! :moneybag::100:");
         }
     });
 }

@@ -3,12 +3,23 @@
         "id": "429015163903934494",
         "token": "-adbUwaANUBBL-tpFv3FT1J8ghRrvVZ9wXCri23V2OoW2Gk4aGMz9F18BDc-I-ZNG0wD"
     },
-    "web3EventsProvider": "wss://rinkeby.infura.io/ws",
+    "role": "&428955604074364939",
+    "web3EventsProvider": "ws://node.quazr.io:8546",
     "contracts": [
         {
-            "address": "0x3539b4408974F38d9C81D456F588FfFD8a0a3706",
+            "address": "0x9cd02516d58EBAEf8DcE063FEe284a3c47a737E8",
             "name": "Chronos",
             "url": "https://chronos.quazr.io/"
+        },
+        {
+            "address": "0x69928Cdb26a6f12c6e4Ba79ef27bC79f46D15Da9",
+            "name": "Chronos Gold",
+            "url": "https://chronos.quazr.io/gold"
+        },
+        {
+            "address": "0x97bc31023e2894490797C1225c69bE0136AEB03b",
+            "name": "Chronos Free",
+            "url": "https://chronos.quazr.io/free"
         }
     ]
 }
